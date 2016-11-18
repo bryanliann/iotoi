@@ -17,7 +17,7 @@
       var date = new Date();
       var milli = date.getTime();
       $http({
-          url: 'http://is439-iotoi.rhcloud.com/api/school/getPastWeekHydrationLevel?date=' + milli +'&school=' +user.school,
+          url: 'https://is439-iotoi.rhcloud.com/api/school/getPastWeekHydrationLevel?date=' + milli +'&school=' +user.school,
           method: 'POST'
       }).then(function successCallback(response) {
         /* Moris Area Chart */
@@ -39,7 +39,7 @@
       });
 
       $http({
-          url: 'http://is439-iotoi.rhcloud.com/api/school/getTotalUserCount?school='+user.school,
+          url: 'https://is439-iotoi.rhcloud.com/api/school/getTotalUserCount?school='+user.school,
           method: 'POST'
       }).then(function successCallback(response) {
         $scope.totalStudentsRegistered = response.data.totalnumberOfUser;
@@ -48,14 +48,14 @@
 
 
       $http({
-          url: 'http://is439-iotoi.rhcloud.com/api/school/getHydratedPercentageByDate?school=' + user.school +'&date=' + milli,
+          url: 'https://is439-iotoi.rhcloud.com/api/school/getHydratedPercentageByDate?school=' + user.school +'&date=' + milli,
           method: 'POST'
       }).then(function successCallback(response) {
         $scope.totalStudentsHydrated = response.data.percentageOfHydratedStudents;
       });
 
       $http({
-          url: 'http://is439-iotoi.rhcloud.com/api/school/getCoolerStats?school='+user.school,
+          url: 'https://is439-iotoi.rhcloud.com/api/school/getCoolerStats?school='+user.school,
           method: 'POST'
       }).then(function successCallback(response) {
         console.log(response);

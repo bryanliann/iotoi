@@ -22,7 +22,7 @@
       var pass = $scope.pass;
 
       $http({
-          url: 'http://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass,
+          url: 'https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass,
           method: 'GET'
       }).then(function successCallback(response) {
           console.log(response);

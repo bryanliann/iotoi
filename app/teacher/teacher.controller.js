@@ -20,7 +20,7 @@
 
       if(classId && studentId){
         $http({
-            url: 'http://is439-iotoi.rhcloud.com/api/user/account/getStudentStats?username=' + studentId,
+            url: 'https://is439-iotoi.rhcloud.com/api/user/account/getStudentStats?username=' + studentId,
             method: 'POST'
         }).then(function successCallback(response) {
           var data =response.data.result;
@@ -29,7 +29,7 @@
           $scope.student =data;
         });
         $http({
-            url: 'http://is439-iotoi.rhcloud.com/api/user/account/getStudentHistory?username=' + studentId,
+            url: 'https://is439-iotoi.rhcloud.com/api/user/account/getStudentHistory?username=' + studentId,
             method: 'POST'
         }).then(function successCallback(response) {
 
@@ -56,14 +56,14 @@
         });
       }else if (classId){
         $http({
-            url: 'http://is439-iotoi.rhcloud.com/api/school/getClassStats?classID=' + user.class +'&school=' + user.school,
+            url: 'https://is439-iotoi.rhcloud.com/api/school/getClassStats?classID=' + user.class +'&school=' + user.school,
             method: 'POST'
         }).then(function successCallback(response) {
           $scope.class = response.data.result;
         });
       }else{
         $http({
-            url: 'http://is439-iotoi.rhcloud.com/api/school/getClassStats?classID=' + user.class +'&school=' + user.school,
+            url: 'https://is439-iotoi.rhcloud.com/api/school/getClassStats?classID=' + user.class +'&school=' + user.school,
             method: 'POST'
         }).then(function successCallback(response) {
           console.log(response);
@@ -78,7 +78,7 @@
           $scope.studentsHydratedInClass = hydrateCount/data.length * 100;
         });
         $http({
-            url: 'http://is439-iotoi.rhcloud.com/api/school/getClassHourlyVisits?classId=' + user.class +'&school=' + user.school,
+            url: 'https://is439-iotoi.rhcloud.com/api/school/getClassHourlyVisits?classId=' + user.class +'&school=' + user.school,
             method: 'POST'
         }).then(function successCallback(response) {
           console.log(response);
