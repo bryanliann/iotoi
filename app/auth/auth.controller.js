@@ -37,7 +37,7 @@
       })*/
 
 
-      $http.get('https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass,config).then(function successCallback(response) {
+      $http.jsonp('https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass).then(function successCallback(response) {
           console.log(response);
             var user ={
               role:response.data.usertype,
