@@ -21,9 +21,14 @@
       var id = $scope.id;
       var pass = $scope.pass;
 
+
+
       $http({
           url: 'https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass,
-          method: 'GET'
+          method: 'GET',
+          header:{
+            Access-Control-Allow-Origin:"*"
+          }
       }).then(function successCallback(response) {
           console.log(response);
             var user ={
