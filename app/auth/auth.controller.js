@@ -21,23 +21,10 @@
       var id = $scope.id;
       var pass = $scope.pass;
 
-      var config = {
-        headers: {
-            "Access-Control-Allow-Origin": "https://bryanliann.github.io"
-        }
-
-      };
-
-      /*$http({
+      $http({
           url: 'https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass,
-          method: 'GET',
-          header:{
-            "Access-Control-Allow-Origin":"*"
-          }
-      })*/
-
-
-      $http.jsonp('https://is439-iotoi.rhcloud.com/api/user/account/login?username=' + id +'&password=' + pass).success(function (response) {
+          method: 'GET'
+      }).then(function successCallback(response) {
           console.log(response);
             var user ={
               role:response.data.usertype,
