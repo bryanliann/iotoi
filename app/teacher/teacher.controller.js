@@ -78,7 +78,7 @@
           $scope.studentsHydratedInClass = (hydrateCount/data.length * 100).toFixed(2);
         });
         $http({
-            url: 'https://is439-iotoi.rhcloud.com/api/school/getClassHourlyVisits?classId=' + user.class +'&school=' + user.school,
+            url: 'https://is439-iotoi.rhcloud.com/api/school/getClassHourlyVisits?classID=' + user.class +'&school=' + user.school,
             method: 'POST'
         }).then(function successCallback(response) {
           console.log(response);
@@ -92,7 +92,8 @@
               gridTextSize: '10px',
               hideHover: true,
               resize: true,
-              gridLineColor: '#E5E5E5'
+              gridLineColor: '#E5E5E5',
+              xLabelAngle: 60
           });
         });
 
