@@ -84,7 +84,7 @@
           console.log(response);
           Morris.Bar({
               element: 'morris-bar-example1',
-              data: response.data.result;
+              data: response.data.result,
               xkey: 'y',
               ykeys: ['a'],
               labels: ['No. of Student Visited'],
