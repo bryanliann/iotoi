@@ -75,7 +75,7 @@
               hydrateCount++;
             }
           }
-          $scope.studentsHydratedInClass = hydrateCount/data.length * 100;
+          $scope.studentsHydratedInClass = (hydrateCount/data.length * 100).toFixed(2);
         });
         $http({
             url: 'https://is439-iotoi.rhcloud.com/api/school/getClassHourlyVisits?classId=' + user.class +'&school=' + user.school,
@@ -84,15 +84,7 @@
           console.log(response);
           Morris.Bar({
               element: 'morris-bar-example1',
-              data: [
-                  { y: '0800 hrs', a: 75},
-                  { y: '0900 hrs', a: 64},
-                  { y: '1000 hrs', a: 78},
-                  { y: '1100 hrs', a: 82},
-                  { y: '1200 hrs', a: 86},
-                  { y: '1300 hrs', a: 94},
-                  { y: '1400 hrs', a: 96}
-              ],
+              data: response.data.result;
               xkey: 'y',
               ykeys: ['a'],
               labels: ['No. of Student Visited'],
