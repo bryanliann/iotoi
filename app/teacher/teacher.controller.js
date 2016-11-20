@@ -88,7 +88,7 @@
               xkey: 'y',
               ykeys: ['a'],
               labels: ['No. of Student Visited'],
-              barColors: ['#1caf9a',],
+              barColors: ['#1caf9a'],
               gridTextSize: '10px',
               hideHover: true,
               resize: true,
