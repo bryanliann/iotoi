@@ -93,7 +93,8 @@
               hideHover: true,
               resize: true,
               gridLineColor: '#E5E5E5',
-              xLabelAngle: 60
+              xLabelAngle: 60,
+              xLabelMargin: 10
           });
         });
 
