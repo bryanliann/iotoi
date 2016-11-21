@@ -59,9 +59,17 @@
           method: 'POST'
       }).then(function successCallback(response) {
         console.log(response);
+
+        var data = response.data.result;
+
+        for(obj in data){
+          obj.a = (obj.a / 1000).toFixed(2);
+          obj.b = (obj.b / 1000).toFixed(2);
+        }
+
         Morris.Bar({
             element: 'morris-bar-example1',
-            data: response.data.result,
+            data: data,
             xkey: 'y',
             ykeys: ['a', 'b'],
             labels: ['Today', 'Average'],
